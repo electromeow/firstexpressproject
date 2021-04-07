@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+        <form method="POST" action="/register">
+            <p>E-Mail</p>
+            <p>{0}</p>
+            <input name="mail" type="email" value="{mail}">
+            <p>Name</p>
+            <input name="name" type="text" value="{name}">
+            <p>Password</p>
+            <p>{1}</p>
+            <input name="password" type="password">
+            <input name="passwordagain" type="password">
+            <button name="submit" type="submit">Submit</button>
+        </form>
+    </body>
+</html>
