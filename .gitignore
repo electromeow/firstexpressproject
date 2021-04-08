@@ -1,6 +1,2 @@
 node_modules/
 .vscode/
-.prettierignore
-.prettierrc.json
-.eslintignore
-.eslintrc.json
