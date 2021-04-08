@@ -10,7 +10,7 @@ async function postToRegister(req,res){
           req.body.password === "" ||
           req.body.passwordagain === ""
     ) {
-      fs.readFile("./register.html", "utf-8", (err, data) => {
+      fs.readFile("./html/register.html", "utf-8", (err, data) => {
         if (err) console.error(err);
         else
           res.send(
@@ -22,7 +22,7 @@ async function postToRegister(req,res){
           );
       });
     } else if (dbJson[req.body.mail] !== undefined) {
-      fs.readFile("./register.html", "utf-8", (err, data) => {
+      fs.readFile("./html/register.html", "utf-8", (err, data) => {
         if (err) console.error(err);
         else
           res.send(
@@ -34,7 +34,7 @@ async function postToRegister(req,res){
           );
       });
     } else if (req.body.password !== req.body.passwordagain) {
-      fs.readFile("./register.html", "utf-8", (err, data) => {
+      fs.readFile("./html/register.html", "utf-8", (err, data) => {
         if (err) console.error(err);
         else
           res.send(
@@ -50,7 +50,7 @@ async function postToRegister(req,res){
       fs.writeFile("./database.json", JSON.stringify(dbJson), (err) =>
         console.error(err)
       );
-      fs.readFile("./loginsuccess.html", "utf-8", (err, loginsuccess) => {
+      fs.readFile("./html/loginsuccess.html", "utf-8", (err, loginsuccess) => {
         if (err) console.error(err);
         else
           res.send(
@@ -66,7 +66,7 @@ async function postToRegister(req,res){
 
 async function getRegister(req,res){
   console.log("/register get request");
-  fs.readFile("./register.html", "utf-8", (err, data) => {
+  fs.readFile("./html/register.html", "utf-8", (err, data) => {
     if (err) console.error(err);
     else {
       res.send(

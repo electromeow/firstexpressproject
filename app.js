@@ -1,4 +1,3 @@
-const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const express = require("express");
 var app = express();
 const port = 80;
@@ -10,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  fs.readFile("./index.html", "utf-8", (err, data) => {
+  fs.readFile("./html/index.html", "utf-8", (err, data) => {
     if (err) console.error(err);
     else {
       fs.readFile("./database.json", "utf-8", (err, data1) => {
